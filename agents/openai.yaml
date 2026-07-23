@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Talking-Head Video"
+  short_description: "Turn talking-head clips into polished social edits"
+  default_prompt: "Use $social-talking-head-video to package my talking-head footage as a polished vertical social video."

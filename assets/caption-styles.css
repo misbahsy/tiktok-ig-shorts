@@ -1,0 +1,80 @@
+/* Copy into a composition and scope selectors when multiple systems coexist. */
+.caption-card {
+  display: inline-block;
+  max-width: 82%;
+  color: #fffaf1;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  filter: drop-shadow(0 7px 14px rgba(0, 0, 0, 0.62));
+}
+.caption-card .feature { display: inline-block; margin: 0 0.08em; }
+
+.caption-impact { font-size: 64px; line-height: 0.92; letter-spacing: -0.05em; }
+.caption-impact .feature {
+  color: #ff664f;
+  font-size: 1.4em;
+  text-shadow: 4px 4px 0 #171512, -2px -2px 0 #171512, 2px -2px 0 #171512, -2px 2px 0 #171512;
+}
+
+.caption-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 54px;
+  line-height: 0.88;
+  font-style: italic;
+  -webkit-text-stroke: 2px #171512;
+  text-shadow: 0 5px 13px rgba(0, 0, 0, 0.6);
+}
+.caption-stacked .feature { color: #ff725e; font-size: 1.5em; }
+
+.caption-neon {
+  padding: 14px 22px 16px;
+  border: 2px solid rgba(164, 140, 255, 0.78);
+  border-radius: 18px;
+  background: rgba(15, 13, 24, 0.78);
+  font-size: 52px;
+  letter-spacing: 0.05em;
+}
+.caption-neon .feature {
+  color: #d8ccff;
+  font-size: 1.3em;
+  text-shadow: 0 0 8px #765ee2, 0 0 20px #765ee2, 0 0 38px #765ee2;
+}
+
+.caption-marker {
+  padding: 12px 20px 16px;
+  border-radius: 6px;
+  background: rgba(255, 250, 241, 0.94);
+  color: #171512;
+  font-size: 58px;
+  line-height: 0.95;
+  box-shadow: 8px 8px 0 rgba(23, 21, 18, 0.48);
+}
+.caption-marker .feature {
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+}
+.caption-marker .feature::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: 4px;
+  z-index: -1;
+  height: 17px;
+  background: #ff725e;
+}
+
+.caption-minimal {
+  padding: 12px 20px 15px;
+  border-radius: 18px;
+  background: rgba(18, 17, 15, 0.8);
+  font-size: 52px;
+  line-height: 1;
+}
+.caption-minimal .feature { color: #ff725e; font-size: 1.22em; }
+

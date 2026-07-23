@@ -1,0 +1,166 @@
+---
+name: social-talking-head-video
+description: Package existing talking-head, interview, tutorial, or founder footage into a polished short-form social video with transcript-driven dynamic captions, picture-in-picture A-roll, full-screen B-roll, product or screen-recording inserts, motion graphics, brand assets, and platform-safe 9:16 framing. Use when creating or revising Instagram Reels, TikTok videos, YouTube Shorts, vertical tool demos, founder clips, or professional social edits from local video files and supporting assets.
+---
+
+# Social Talking-Head Video
+
+Create a professional vertical social edit from existing speech-led footage. Preserve the source narration while designing an intentional rhythm between presenter, B-roll, product evidence, motion graphics, and semantic captions.
+
+## 1. Run the intake gate before building
+
+Read [references/intake.md](references/intake.md) and collect its three information groups in one concise round. Do not scaffold, transcribe, source media, or design frames until the intake is answered or the user explicitly delegates decisions.
+
+If the user supplies files or folders, inventory them before proposing more assets:
+
+```bash
+python3 scripts/inventory_media.py /path/to/media --out media-inventory.json
+```
+
+Treat supplied material as specific creative direction, not merely input. State how each useful asset could appear in the edit.
+
+## 2. Establish the technical workflow
+
+Use HyperFrames as the default output framework unless the user explicitly selects another framework.
+
+1. Read the installed `/hyperframes` skill, then `/hyperframes-core`, `/hyperframes-animation`, `/hyperframes-creative`, `/hyperframes-cli`, and `/media-use` only as needed.
+2. Run `npx hyperframes skills update talking-head-recut` before relying on its workflow.
+3. Run `npx hyperframes doctor` and confirm FFmpeg, FFprobe, Chrome, and local transcription are available.
+4. Probe source and reference videos with FFprobe. Analyze reference footage with contact sheets, scene-change timings, and transcription rather than copying its surface appearance.
+5. Scaffold the project with `npx hyperframes init ... --video <source>`, then write the confirmed intake to `BRIEF.md` immediately after initialization.
+
+Do not re-ask questions already settled by this skill's intake. If another workflow owns a technical step, pass the confirmed `BRIEF.md` forward.
+
+## 3. Analyze speech and assets
+
+Transcribe to word-level timestamps. Prefer an explicit English model for known English speech:
+
+```bash
+npx hyperframes transcribe input.mp4 -d analysis/transcript --json --model small.en
+python3 scripts/group_transcript.py analysis/transcript/transcript.json --out caption-groups.json
+```
+
+Correct product names, brands, APIs, acronyms, and technical terms without changing timestamps. Read the transcript for:
+
+- the hook and payoff;
+- named products, features, and steps that need proof on screen;
+- natural B-roll opportunities;
+- words that deserve caption emphasis;
+- sections where the presenter should disappear so the evidence can take over.
+
+## 4. Plan the edit before authoring
+
+Read [references/editorial-system.md](references/editorial-system.md). Write a lightweight storyboard that maps each transcript beat to one primary visual role:
+
+- presenter-led A-roll or bottom PiP;
+- full-screen product or scroll B-roll;
+- screen recording or website capture;
+- focused motion graphic;
+- payoff or CTA.
+
+Default short-form rhythm when the user delegates decisions:
+
+- 1080×1920, 30 fps;
+- first 1–3 seconds: active full-frame B-roll behind a borderless bottom PiP;
+- change the dominant visual every 2–4 seconds;
+- use at least two full-screen B-roll moments in a 20–40 second clip;
+- return to the presenter between evidence beats so the edit breathes;
+- keep one idea per frame and one visual climax near the end.
+
+Do not force B-roll on a timer. Every insert must prove or clarify the current spoken idea.
+
+## 5. Build the visual system
+
+Use three depth layers: atmospheric background, primary content, and foreground accents/captions. Prefer editorial structure, strong type hierarchy, real product evidence, and hard cuts or short velocity-matched transitions.
+
+### Presenter treatment
+
+- Use a clean borderless PiP with 48–72 px side insets in portrait.
+- Keep the face and gestures readable; use `object-position` deliberately.
+- Never add a `PRESENTER` label.
+- Avoid decorative borders, fake device chrome, or nested rounded frames unless a reference explicitly requires them.
+- Hide the presenter during full-screen B-roll, dense product demonstrations, or hero motion-graphic beats.
+- Preserve the original program audio on a separate root-level `<audio>` track.
+
+### Dynamic captions
+
+Use short groups, generally one to three words or one compact phrase. The script determines scale and treatment:
+
+- emphasize the word carrying the claim, action, number, brand, or payoff;
+- keep connective words smaller;
+- change style only when meaning or energy changes;
+- avoid random color, rotation, or scale;
+- keep captions inside platform-safe zones and away from faces.
+
+Copy or adapt [assets/caption-styles.css](assets/caption-styles.css). The five supplied treatments are `impact`, `stacked`, `neon`, `marker`, and `minimal`. Use a coherent subset of two to four in one video.
+
+### B-roll and screen recordings
+
+- Normalize high-frame-rate recordings to the composition fps and use dense keyframes for seek-safe rendering.
+- Keep all `<video>` and `<audio>` elements as direct children of the HyperFrames composition root.
+- Use `object-fit: cover` for portrait or crop-safe material; use a deliberate dark or branded stage for landscape recordings that must remain uncropped.
+- Animate the media itself subtly with scale or translation only when the crop stays safe.
+- Let full-screen evidence replace the presenter rather than shrinking both into unreadable panels.
+
+## 6. Avoid generated-looking shortcuts
+
+Do not use generic rounded pills as decoration, especially status labels such as `Connected`, `Live`, `AI`, or `Presenter`. Also avoid:
+
+- gratuitous glassmorphism and purple-blue gradients;
+- repeated identical rounded cards;
+- tiny web-layout typography;
+- emoji standing in for real icons;
+- random caption styling;
+- empty solid backgrounds without structural or thematic depth;
+- branding or claims not supported by supplied material.
+
+Rounded shapes are acceptable when function demands them: PiP crops, real product UI, buttons present in source footage, or a specific approved reference.
+
+## 7. Verify and review
+
+Read [references/production-and-qa.md](references/production-and-qa.md) before checks or rendering.
+
+1. Run `npx hyperframes lint` after the first full composition pass.
+2. Add a `*.motion.json` sidecar for important entrances, ordering, and in-frame assertions.
+3. Run `npx hyperframes check --snapshots` at transcript beats and every A-roll/B-roll handoff.
+4. Inspect the snapshots yourself. Automated success does not prove that screen recordings are readable or crops are flattering.
+5. Open Studio with `npx hyperframes preview` and ask for final approval.
+6. Render only after approval; use high quality for delivery.
+7. Verify duration, dimensions, audio, and file size with FFprobe.
+
+## 8. Deliver durable artifacts
+
+Preserve:
+
+- `BRIEF.md` with intake decisions and asset uses;
+- corrected word-level transcript;
+- storyboard or beat map;
+- source composition and motion assertions;
+- normalized local media;
+- final MP4;
+- reference-analysis notes when a style reference was supplied.
+
+Checkpoint meaningful approved versions in Git before large stylistic experiments.
+
+## Installation
+
+Install from a local checkout by copying this folder into the harness skill directory, keeping `SKILL.md`, `agents/`, `scripts/`, `references/`, and `assets/` together.
+
+Common locations:
+
+```bash
+# Codex
+cp -R social-talking-head-video "${CODEX_HOME:-$HOME/.codex}/skills/"
+
+# Universal agents directory used by several coding harnesses
+cp -R social-talking-head-video "$HOME/.agents/skills/"
+```
+
+For a published Git repository, compatible harnesses can use the Skills CLI:
+
+```bash
+npx skills add <owner>/<repo>
+```
+
+Install HyperFrames separately with `npx hyperframes skills update talking-head-recut`. The skill repository does not vendor the HyperFrames runtime.
+
