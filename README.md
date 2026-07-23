@@ -4,6 +4,14 @@ An agent skill for turning existing talking-head, founder, interview, or tutoria
 
 It guides an agent through asset triage, reference analysis, transcript-driven editing, dynamic captions, picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and final render verification.
 
+## Example
+
+[![Watch the finished vertical social edit](examples/scroll-world-example-poster.jpg)](examples/scroll-world-final-sfx-audible.mp4)
+
+[Watch or download the MP4](examples/scroll-world-final-sfx-audible.mp4). This example demonstrates borderless presenter PiP, full-screen B-roll, semantic captions, product screen recordings, and motion-synced SFX.
+
+The posted example predates the current top-safe-zone rule. Its opening headline revealed that TikTok's search surface can obscure copy near the top edge; the skill now keeps essential shared-platform text below `y=320` on a 1080×1920 master.
+
 ## What the agent asks first
 
 Before it begins production, the skill collects three compact groups of information:
@@ -72,6 +80,7 @@ npx hyperframes skills update talking-head-recut
 - `references/sound-design.md` — calibrated under-dialogue SFX placement and verification
 - `assets/brief-template.md` — production brief template
 - `assets/caption-styles.css` — adaptable semantic caption treatments
+- `assets/social-safe-zone-overlay.svg` — conservative Reels/TikTok UI exclusion guide
 - `scripts/inventory_media.py` — asset inventory and metadata probing
 - `scripts/group_transcript.py` — word-timestamp to caption-group helper
 

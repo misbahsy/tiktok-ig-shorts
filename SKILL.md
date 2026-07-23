@@ -61,6 +61,7 @@ Read [references/editorial-system.md](references/editorial-system.md). Write a l
 Default short-form rhythm when the user delegates decisions:
 
 - 1080×1920, 30 fps;
+- reserve the first 320 px for platform chrome; place essential hook text at `y >= 320`;
 - first 1–3 seconds: active full-frame B-roll behind a borderless bottom PiP;
 - change the dominant visual every 2–4 seconds;
 - use at least two full-screen B-roll moments in a 20–40 second clip;
@@ -91,6 +92,7 @@ Use short groups, generally one to three words or one compact phrase. The script
 - change style only when meaning or energy changes;
 - avoid random color, rotation, or scale;
 - keep captions inside platform-safe zones and away from faces.
+- Never place essential hook text, product names, or CTA copy in the top 320 px of a shared Reels/TikTok 1080×1920 master. Search bars, status controls, and upload-time UI can cover this area.
 
 Copy or adapt [assets/caption-styles.css](assets/caption-styles.css). The five supplied treatments are `impact`, `stacked`, `neon`, `marker`, and `minimal`. Use a coherent subset of two to four in one video.
 
@@ -134,7 +136,7 @@ Read [references/production-and-qa.md](references/production-and-qa.md) before c
 1. Run `npx hyperframes lint` after the first full composition pass.
 2. Add a `*.motion.json` sidecar for important entrances, ordering, and in-frame assertions.
 3. Run `npx hyperframes check --snapshots` at transcript beats and every A-roll/B-roll handoff.
-4. Inspect the snapshots yourself. Automated success does not prove that screen recordings are readable or crops are flattering.
+4. Inspect the snapshots yourself with [assets/social-safe-zone-overlay.svg](assets/social-safe-zone-overlay.svg) as a guide. Automated success does not prove that screen recordings are readable, crops are flattering, or platform UI will not obscure text.
 5. Open Studio with `npx hyperframes preview` and ask for final approval.
 6. Render only after approval; use high quality for delivery.
 7. Verify duration, dimensions, audio, file size, SFX audibility, and peak headroom. Compare against a no-SFX reference or inspect cue windows when practical.

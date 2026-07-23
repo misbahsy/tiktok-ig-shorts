@@ -76,11 +76,17 @@ Write the findings to `REFERENCE_ANALYSIS.md` so the rationale survives the sess
 
 For a shared Reels/TikTok 1080×1920 master:
 
+- treat `y=0–320` as a top UI exclusion zone; keep essential hook text and card copy below `y=320`;
+- prefer `y=340–620` for a top-positioned headline, allowing breathing room below the search surface;
+- footage, texture, and nonessential decoration may extend behind the top UI exclusion zone;
 - keep essential text at least 64 px from left/right edges;
 - avoid the bottom 180 px for essential text;
 - keep right-side controls in mind; captions centered or left-of-center are safer;
 - place the presenter above the description region when possible;
-- inspect on a phone-sized preview, not only a desktop canvas.
+- inspect on a phone-sized preview with [../assets/social-safe-zone-overlay.svg](../assets/social-safe-zone-overlay.svg), not only a clean desktop canvas;
+- when the destination is known, upload a private draft or inspect a platform screenshot because search bars and control placement change over time.
+
+Do not vertically center the entire design merely to satisfy the safe zone. Keep motion and imagery full-frame, then move only essential text or text-bearing cards into the safe content area.
 
 ## Anti-patterns
 
@@ -95,4 +101,3 @@ Reject visual devices that signal generic generated output unless the reference 
 - random zooms, rotation, or caption colors;
 - stock imagery when real screen recordings exist;
 - B-roll that is unrelated to the spoken sentence.
-

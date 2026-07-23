@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <title>Shared Instagram Reels and TikTok safe-zone guide</title>
+  <desc>Conservative overlay for a 1080 by 1920 master. Keep essential top text below y 320.</desc>
+  <rect width="1080" height="1920" fill="none"/>
+  <rect x="0" y="0" width="1080" height="320" fill="#ff4d4d" fill-opacity="0.20"/>
+  <rect x="900" y="520" width="180" height="1120" fill="#ff4d4d" fill-opacity="0.16"/>
+  <rect x="0" y="1640" width="1080" height="280" fill="#ff4d4d" fill-opacity="0.18"/>
+  <rect x="72" y="320" width="828" height="1320" rx="12" fill="#49c878" fill-opacity="0.05" stroke="#49c878" stroke-width="4" stroke-dasharray="16 12"/>
+  <line x1="0" y1="320" x2="1080" y2="320" stroke="#ff4d4d" stroke-width="5" stroke-dasharray="20 12"/>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="28">
+    <text x="40" y="58" fill="#ffffff" stroke="#141413" stroke-width="6" paint-order="stroke">TOP UI EXCLUSION — NO ESSENTIAL TEXT</text>
+    <text x="40" y="300" fill="#ffffff" stroke="#141413" stroke-width="6" paint-order="stroke">ESSENTIAL TOP COPY STARTS BELOW Y=320</text>
+    <text x="92" y="370" fill="#49c878" stroke="#141413" stroke-width="5" paint-order="stroke">SHARED SAFE CONTENT AREA</text>
+    <text x="916" y="570" fill="#ffffff" stroke="#141413" stroke-width="5" paint-order="stroke" transform="rotate(90 916 570)">RIGHT-SIDE CONTROLS</text>
+    <text x="40" y="1690" fill="#ffffff" stroke="#141413" stroke-width="6" paint-order="stroke">CAPTION / DESCRIPTION UI</text>
+  </g>
+</svg>

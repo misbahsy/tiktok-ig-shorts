@@ -42,6 +42,8 @@ Sample:
 
 Check:
 
+- essential top text begins at or below `y=320` on a 1080×1920 shared Reels/TikTok master;
+- the safe-zone overlay does not intersect hook text, product names, prices, or CTA copy;
 - speaker crop and face clearance;
 - screen recording readability;
 - caption contrast and safe zones;
@@ -60,6 +62,8 @@ npx hyperframes lint --verbose
 npx hyperframes check --snapshots --at "0.8,3.2,6.4,9.6"
 npx hyperframes preview
 ```
+
+For platform-UI review, composite or visually align `assets/social-safe-zone-overlay.svg` over representative snapshots. The overlay is a conservative shared-platform guide, not a promise that every app version uses identical chrome.
 
 After explicit approval:
 
