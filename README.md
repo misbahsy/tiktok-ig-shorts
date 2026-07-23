@@ -2,7 +2,7 @@
 
 An agent skill for turning existing talking-head, founder, interview, or tutorial footage into polished vertical social videos for Instagram Reels, TikTok, and YouTube Shorts.
 
-It guides an agent through asset triage, reference analysis, transcript-driven editing, dynamic captions, picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, review, and final render verification.
+It guides an agent through asset triage, reference analysis, transcript-driven editing, dynamic captions, picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and final render verification.
 
 ## What the agent asks first
 
@@ -69,6 +69,7 @@ npx hyperframes skills update talking-head-recut
 - `references/intake.md` — three-part intake gate
 - `references/editorial-system.md` — A-roll/B-roll and caption design system
 - `references/production-and-qa.md` — approval, render, and delivery checks
+- `references/sound-design.md` — calibrated under-dialogue SFX placement and verification
 - `assets/brief-template.md` — production brief template
 - `assets/caption-styles.css` — adaptable semantic caption treatments
 - `scripts/inventory_media.py` — asset inventory and metadata probing

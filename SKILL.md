@@ -1,6 +1,6 @@
 ---
 name: social-talking-head-video
-description: Package existing talking-head, interview, tutorial, or founder footage into a polished short-form social video with transcript-driven dynamic captions, picture-in-picture A-roll, full-screen B-roll, product or screen-recording inserts, motion graphics, brand assets, and platform-safe 9:16 framing. Use when creating or revising Instagram Reels, TikTok videos, YouTube Shorts, vertical tool demos, founder clips, or professional social edits from local video files and supporting assets.
+description: Package existing talking-head, interview, tutorial, or founder footage into a polished short-form social video with transcript-driven dynamic captions, picture-in-picture A-roll, full-screen B-roll, product or screen-recording inserts, motion graphics, calibrated motion-synced sound effects, brand assets, and platform-safe 9:16 framing. Use when creating or revising Instagram Reels, TikTok videos, YouTube Shorts, vertical tool demos, founder clips, or professional social edits from local video files and supporting assets.
 ---
 
 # Social Talking-Head Video
@@ -102,6 +102,17 @@ Copy or adapt [assets/caption-styles.css](assets/caption-styles.css). The five s
 - Animate the media itself subtly with scale or translation only when the crop stays safe.
 - Let full-screen evidence replace the presenter rather than shrinking both into unreadable panels.
 
+### Motion-synced sound design
+
+Read [references/sound-design.md](references/sound-design.md) before adding SFX. Run one semantic sound pass after motion timing is stable:
+
+- short whoosh or swoosh for fast slides and major scene handoffs;
+- soft pop for selected card, keyword, or headline landings;
+- quiet wind-like sweep for a larger full-screen B-roll transition;
+- no cue when the visual motion is too small to justify one.
+
+Measure each source effect before mixing. Do not assume a small `data-volume` is audible: quiet pop assets often need `0.35–0.45`, common whooshes `0.30–0.40`, and sustained sweeps `0.18–0.25`. These are calibrated starting points, not universal constants. Keep speech dominant, avoid accenting every caption, and audition the rendered mix on ordinary speakers or headphones.
+
 ## 6. Avoid generated-looking shortcuts
 
 Do not use generic rounded pills as decoration, especially status labels such as `Connected`, `Live`, `AI`, or `Presenter`. Also avoid:
@@ -126,7 +137,7 @@ Read [references/production-and-qa.md](references/production-and-qa.md) before c
 4. Inspect the snapshots yourself. Automated success does not prove that screen recordings are readable or crops are flattering.
 5. Open Studio with `npx hyperframes preview` and ask for final approval.
 6. Render only after approval; use high quality for delivery.
-7. Verify duration, dimensions, audio, and file size with FFprobe.
+7. Verify duration, dimensions, audio, file size, SFX audibility, and peak headroom. Compare against a no-SFX reference or inspect cue windows when practical.
 
 ## 8. Deliver durable artifacts
 
@@ -163,4 +174,3 @@ npx skills add <owner>/<repo>
 ```
 
 Install HyperFrames separately with `npx hyperframes skills update talking-head-recut`. The skill repository does not vendor the HyperFrames runtime.
-

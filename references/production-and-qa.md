@@ -48,6 +48,9 @@ Check:
 - unwanted labels, borders, status pills, cursors, browser chrome, or watermarks;
 - black/blank media frames;
 - audio continuity across visual cuts;
+- whether every intended SFX cue is actually audible beneath speech;
+- whether SFX ever mask consonants, product names, numbers, or the CTA;
+- whether the final mix retains at least 3 dB of true-peak headroom;
 - spelling of brands and technical terms.
 
 ## Commands
@@ -67,6 +70,8 @@ ffprobe -v error -show_entries format=duration,size \
   -of json renders/final.mp4
 ```
 
+For a composition with SFX, follow the measurement and rendered-delta checks in [sound-design.md](sound-design.md). Listening is still mandatory: successful muxing and similar integrated loudness do not prove that short effects are perceptible.
+
 ## Git checkpoints
 
 Create a checkpoint before broad visual experiments. Keep generated caches and renders ignored unless the user asks to version them. Use descriptive commits such as:
@@ -74,4 +79,3 @@ Create a checkpoint before broad visual experiments. Keep generated caches and r
 - `Checkpoint approved editorial cut`
 - `Add full-screen product B-roll rhythm`
 - `Add alternate brand-styled variant`
-

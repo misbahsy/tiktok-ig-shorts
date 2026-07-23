@@ -16,5 +16,12 @@ angle: tool-demo
 
 ## Customizations
 
-## Notes
+### Sound design
 
+- Speech priority:
+- SFX intensity: restrained / present / punchy
+- Approved cue families: whoosh / swoosh / wind sweep / pop / click / other
+- Music: none / supplied / approved for sourcing
+- Elements that should remain unaccented:
+
+## Notes
