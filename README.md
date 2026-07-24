@@ -24,26 +24,25 @@ The agent inventories files already supplied before requesting more material. If
 
 ## Install
 
-Clone or download this repository, then keep the entire folder together when placing it in your harness's skill directory.
+### Codex and other agents — Skills CLI (recommended)
 
-### Codex
+Using [Vercel's Skills CLI](https://github.com/vercel-labs/skills), which supports Codex, Claude Code, Cursor, and other compatible agents:
 
 ```bash
-cp -R social-talking-head-video "${CODEX_HOME:-$HOME/.codex}/skills/"
+npx skills add misbahsy/tiktok-ig-shorts            # choose agent(s) interactively
+npx skills add misbahsy/tiktok-ig-shorts -a codex   # install directly for Codex
 ```
 
-### Agents-compatible harnesses
+In Codex, invoke it with `$social-talking-head-video` (or use `/skills` to browse), or simply ask the agent to turn your talking-head footage into a polished vertical social edit.
+
+### Manually (drop-in skill)
+
+Clone the repository, then copy the complete folder so its relative `assets/`, `references/`, and `scripts/` paths remain intact:
 
 ```bash
-cp -R social-talking-head-video "$HOME/.agents/skills/"
-```
-
-### Skills CLI
-
-After this repository is published:
-
-```bash
-npx skills add <owner>/<repo>
+git clone https://github.com/misbahsy/tiktok-ig-shorts.git social-talking-head-video
+cp -R social-talking-head-video "${CODEX_HOME:-$HOME/.codex}/skills/"  # Codex
+cp -R social-talking-head-video "$HOME/.agents/skills/"               # compatible agents
 ```
 
 For another coding harness, configure its skill or instruction loader to read this repository's `SKILL.md` and preserve the relative `assets/`, `references/`, and `scripts/` paths.
