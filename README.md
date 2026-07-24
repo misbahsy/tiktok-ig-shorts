@@ -6,11 +6,11 @@ It guides an agent through asset triage, reference analysis, transcript-driven e
 
 ## Example
 
-[![Watch the finished vertical social edit](examples/scroll-world-example-poster.jpg)](examples/scroll-world-final-sfx-audible.mp4)
+[![Watch the finished vertical social edit](examples/ai-shorts-editing-assistant-poster.jpg)](examples/ai-shorts-editing-assistant-final.mp4)
 
-[Watch or download the MP4](examples/scroll-world-final-sfx-audible.mp4). This example demonstrates borderless presenter PiP, full-screen B-roll, semantic captions, product screen recordings, and motion-synced SFX.
+[Watch or download the MP4](examples/ai-shorts-editing-assistant-final.mp4). This example demonstrates a typed chat hook, product screen recording, animated asset cards, dynamic captions, borderless presenter PiP, a complete 9:16 edit shown inside a phone frame, platform-safe spacing, and motion-synced SFX.
 
-The posted example predates the current top-safe-zone rule. Its opening headline revealed that TikTok's search surface can obscure copy near the top edge; the skill now keeps essential shared-platform text below `y=320` on a 1080×1920 master.
+The composition uses a conservative shared Instagram/TikTok safe zone: essential top copy begins below `y=320` on the 1080×1920 master, while the presenter card retains breathing room above the bottom platform controls.
 
 ## What the agent asks first
 
@@ -83,5 +83,6 @@ npx hyperframes skills update talking-head-recut
 - `assets/social-safe-zone-overlay.svg` — conservative Reels/TikTok UI exclusion guide
 - `scripts/inventory_media.py` — asset inventory and metadata probing
 - `scripts/group_transcript.py` — word-timestamp to caption-group helper
+- `examples/ai-shorts-editing-assistant-final.mp4` — finished 9:16 reference edit
 
 The skill intentionally discourages generated-looking shortcuts such as decorative status pills, presenter labels, gratuitous glassmorphism, and arbitrary caption styling.
