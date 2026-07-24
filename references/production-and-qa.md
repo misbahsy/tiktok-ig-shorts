@@ -46,7 +46,10 @@ Check:
 - the safe-zone overlay does not intersect hook text, product names, prices, or CTA copy;
 - speaker crop and face clearance;
 - screen recording readability;
-- caption contrast and safe zones;
+- continuous caption coverage except intentional pauses;
+- word-level caption sync and corrected spelling;
+- caption contrast, platform safe zones, and face clearance;
+- the longest two-line caption and largest emphasis treatment in every presenter geometry;
 - unwanted labels, borders, status pills, cursors, browser chrome, or watermarks;
 - black/blank media frames;
 - audio continuity across visual cuts;

@@ -33,7 +33,7 @@ Ask for:
 
 - one or more reference videos, images, or links;
 - desired tone: editorial, cinematic, technical, playful, premium, raw, or brand-led;
-- caption intensity: restrained, dynamic, or maximal;
+- caption intensity: restrained, dynamic, or maximal; captions remain enabled unless the user explicitly opts out;
 - preferred A-roll/B-roll balance;
 - required colors/fonts and anything to avoid;
 - CTA and whether an outro is wanted.
@@ -47,10 +47,9 @@ When the user says “decide,” “use defaults,” or requests an autonomous r
 - canvas: 1080×1920 at 30 fps;
 - layout: borderless presenter PiP over active B-roll, alternating with full-screen evidence;
 - style: clean editorial with one accent color and strong black/cream neutrals;
-- captions: semantic dynamic emphasis using two to four coherent treatments;
+- captions: continuous word-timed semantic coverage using two to four coherent treatments, with one emphasized token per phrase and face-safe placement;
 - rhythm: dominant visual change every 2–4 seconds;
 - sound: original speech dominant, restrained transition SFX, no music unless approved;
 - CTA: no invented CTA or outro.
 
 Send one heads-up summarizing delegated decisions, then proceed.
-

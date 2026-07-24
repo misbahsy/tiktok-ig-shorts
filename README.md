@@ -2,7 +2,7 @@
 
 An agent skill for turning existing talking-head, founder, interview, or tutorial footage into polished vertical social videos for Instagram Reels, TikTok, and YouTube Shorts.
 
-It guides an agent through asset triage, reference analysis, transcript-driven editing, dynamic captions, picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and final render verification.
+It guides an agent through asset triage, reference analysis, transcript-driven editing, word-timed dynamic captions enabled by default, picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and final render verification.
 
 ## Example
 

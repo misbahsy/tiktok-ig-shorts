@@ -1,6 +1,6 @@
 ---
 name: social-talking-head-video
-description: Package existing talking-head, interview, tutorial, or founder footage into a polished short-form social video with transcript-driven dynamic captions, picture-in-picture A-roll, full-screen B-roll, product or screen-recording inserts, motion graphics, calibrated motion-synced sound effects, brand assets, and platform-safe 9:16 framing. Use when creating or revising Instagram Reels, TikTok videos, YouTube Shorts, vertical tool demos, founder clips, or professional social edits from local video files and supporting assets.
+description: Package existing talking-head, interview, tutorial, or founder footage into a polished short-form social video with word-timed dynamic captions enabled by default, picture-in-picture A-roll, full-screen B-roll, product or screen-recording inserts, motion graphics, calibrated motion-synced sound effects, brand assets, and platform-safe 9:16 framing. Use when creating or revising Instagram Reels, TikTok videos, YouTube Shorts, vertical tool demos, founder clips, or professional social edits from local video files and supporting assets.
 ---
 
 # Social Talking-Head Video
@@ -85,13 +85,19 @@ Use three depth layers: atmospheric background, primary content, and foreground 
 
 ### Dynamic captions
 
-Use short groups, generally one to three words or one compact phrase. The script determines scale and treatment:
+Treat dynamic captions as a core deliverable. Enable them by default unless the user explicitly requests no captions. Do not substitute a few occasional callout cards for continuous spoken coverage.
+
+Build captions from the corrected word-level transcript. Use short groups, generally one to three words or one compact phrase, and extend each group only to the next natural phrase boundary. The script determines scale and treatment:
 
 - emphasize the word carrying the claim, action, number, brand, or payoff;
 - keep connective words smaller;
+- activate words on their spoken timestamps and hard-hide each group at its end;
 - change style only when meaning or energy changes;
 - avoid random color, rotation, or scale;
-- keep captions inside platform-safe zones and away from faces.
+- keep one group visible at a time;
+- keep captions inside platform-safe zones and away from faces;
+- in a presenter PiP, default to a lower-chest rail rather than the vertical center of the card;
+- inspect the longest two-line group and every layout change; technical in-frame status does not prove face clearance.
 - Never place essential hook text, product names, or CTA copy in the top 320 px of a shared Reels/TikTok 1080×1920 master. Search bars, status controls, and upload-time UI can cover this area.
 
 Copy or adapt [assets/caption-styles.css](assets/caption-styles.css). The five supplied treatments are `impact`, `stacked`, `neon`, `marker`, and `minimal`. Use a coherent subset of two to four in one video.
@@ -135,11 +141,11 @@ Read [references/production-and-qa.md](references/production-and-qa.md) before c
 
 1. Run `npx hyperframes lint` after the first full composition pass.
 2. Add a `*.motion.json` sidecar for important entrances, ordering, and in-frame assertions.
-3. Run `npx hyperframes check --snapshots` at transcript beats and every A-roll/B-roll handoff.
+3. Run `npx hyperframes check --snapshots` at transcript beats, every A-roll/B-roll handoff, and representative short and long caption groups.
 4. Inspect the snapshots yourself with [assets/social-safe-zone-overlay.svg](assets/social-safe-zone-overlay.svg) as a guide. Automated success does not prove that screen recordings are readable, crops are flattering, or platform UI will not obscure text.
 5. Open Studio with `npx hyperframes preview` and ask for final approval.
 6. Render only after approval; use high quality for delivery.
-7. Verify duration, dimensions, audio, file size, SFX audibility, and peak headroom. Compare against a no-SFX reference or inspect cue windows when practical.
+7. Verify duration, dimensions, audio, file size, caption continuity and face clearance, SFX audibility, and peak headroom. Compare against a no-SFX reference or inspect cue windows when practical.
 
 ## 8. Deliver durable artifacts
 

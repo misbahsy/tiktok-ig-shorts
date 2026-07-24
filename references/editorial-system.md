@@ -40,6 +40,8 @@ Prefer hard cuts for rapid proof, short opacity/blur transitions for continuous 
 
 ## Caption direction
 
+Captions are on by default. Disable them only when the user explicitly asks. A sparse set of headline callouts does not satisfy the caption requirement.
+
 Group speech by meaning, not fixed duration. Aim for:
 
 - 1–3 words for impact beats;
@@ -58,6 +60,10 @@ Suggested semantic mapping:
 | Connective explanation | Minimal |
 
 Emphasis must come from the transcript. Never hash words into random styles in a final edit.
+
+Drive word activation from corrected word timestamps, keep one group visible at a time, and hard-hide each group at its end. In presenter-led portrait layouts, place the caption rail over the lower chest or below the PiP rather than over the mouth, chin, or eyes. Reposition the rail when the layout changes instead of forcing one global coordinate onto every scene.
+
+Inspect at least the longest phrase, the largest treatment, and one sample from every presenter geometry. Face clearance is a visual requirement even when automated layout checks pass.
 
 ## Reference analysis
 
