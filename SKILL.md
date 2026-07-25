@@ -76,12 +76,15 @@ Use three depth layers: atmospheric background, primary content, and foreground 
 
 ### Presenter treatment
 
+- Offer two treatments during intake: `standard` borderless PiP or `pop-out` layered PiP. Default to `standard` unless the user chooses pop-out or supplies a matching reference.
 - Use a clean borderless PiP with 48–72 px side insets in portrait.
 - Keep the face and gestures readable; use `object-position` deliberately.
 - Never add a `PRESENTER` label.
 - Avoid decorative borders, fake device chrome, or nested rounded frames unless a reference explicitly requires them.
 - Hide the presenter during full-screen B-roll, dense product demonstrations, or hero motion-graphic beats.
 - Preserve the original program audio on a separate root-level `<audio>` track.
+
+For the pop-out treatment, read [references/presenter-treatments.md](references/presenter-treatments.md). Generate a real transparent subject layer with `hyperframes remove-background`, then align it exactly over a clipped copy of the same source so the head or hands can cross the PiP edge. Do not fake the effect with a shifted duplicate.
 
 ### Dynamic captions
 

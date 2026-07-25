@@ -45,6 +45,7 @@ Check:
 - essential top text begins at or below `y=320` on a 1080×1920 shared Reels/TikTok master;
 - the safe-zone overlay does not intersect hook text, product names, prices, or CTA copy;
 - speaker crop and face clearance;
+- pop-out subject and base layer remain frame-synchronized with no doubled face, RGB halo, matte chatter, or visible seam at the PiP edge;
 - screen recording readability;
 - continuous caption coverage except intentional pauses;
 - word-level caption sync and corrected spelling;
