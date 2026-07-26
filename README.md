@@ -1,14 +1,32 @@
-# Social Talking-Head Video Skill
+# TikTok & Instagram Talking-Head Skills
 
-An agent skill for turning existing talking-head, founder, interview, or tutorial footage into polished vertical social videos for Instagram Reels, TikTok, and YouTube Shorts.
+A composable collection of agent skills for turning existing talking-head, founder, interview, or tutorial footage into polished vertical social videos for Instagram Reels, TikTok, and YouTube Shorts.
 
-It guides an agent through asset triage, reference analysis, transcript-driven editing, word-timed dynamic captions enabled by default, standard or layered pop-out picture-in-picture A-roll, full-screen B-roll, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and final render verification.
+The collection covers asset triage, reference analysis, transcript-driven editing, standard and layered pop-out picture-in-picture, kinetic captions, an Anthropic-inspired editorial style, full-screen B-roll, scrolling webpage captures, product screen recordings, motion graphics, calibrated motion-synced SFX, review, and render verification.
+
+## Skills
+
+| Skill | Use it for |
+| --- | --- |
+| `social-talking-head-video` | Complete short-form edit with dynamic captions enabled by default |
+| `popout-talking-head-video` | Layered cutout presenter that breaks beyond the PiP edge |
+| `kinetic-caption-video` | Captions that move among upper, lower, mid-frame, and behind-presenter zones |
+| `anthropic-talking-head-style` | Warm ivory, charcoal, terracotta, editorial print-inspired art direction |
+
+The skills are composable. For example, invoke the base editor with the pop-out and kinetic-caption skills to create a complete layered edit, or add the Anthropic-inspired style to either presenter treatment.
 
 ## Example
 
-[![Watch the finished vertical social edit](examples/ai-shorts-editing-assistant-poster.jpg)](examples/ai-shorts-editing-assistant-final.mp4)
+Each installable skill includes its own verified 1080×1920 MP4 reference:
 
-[Watch or download the MP4](examples/ai-shorts-editing-assistant-final.mp4). This example demonstrates a typed chat hook, product screen recording, animated asset cards, dynamic captions, borderless presenter PiP, a complete 9:16 edit shown inside a phone frame, platform-safe spacing, and motion-synced SFX.
+| Format | Preview | MP4 |
+| --- | --- | --- |
+| Standard talking-head | [![Standard talking-head example](skills/social-talking-head-video/assets/example/poster.png)](skills/social-talking-head-video/assets/example/standard-talking-head.mp4) | [Watch or download](skills/social-talking-head-video/assets/example/standard-talking-head.mp4) |
+| Pop-out presenter | [![Pop-out presenter example](skills/popout-talking-head-video/assets/example/poster.png)](skills/popout-talking-head-video/assets/example/popout-presenter.mp4) | [Watch or download](skills/popout-talking-head-video/assets/example/popout-presenter.mp4) |
+| Kinetic/depth captions | [![Kinetic captions example](skills/kinetic-caption-video/assets/example/poster.png)](skills/kinetic-caption-video/assets/example/kinetic-depth-captions.mp4) | [Watch or download](skills/kinetic-caption-video/assets/example/kinetic-depth-captions.mp4) |
+| Anthropic editorial style | [![Anthropic editorial example](skills/anthropic-talking-head-style/assets/example/poster.png)](skills/anthropic-talking-head-style/assets/example/anthropic-editorial.mp4) | [Watch or download](skills/anthropic-talking-head-style/assets/example/anthropic-editorial.mp4) |
+
+The first three use the same source edit so the presenter and caption treatments can be compared directly. The Anthropic example uses the longer Scroll World video to demonstrate the complete warm editorial system.
 
 The composition uses a conservative shared Instagram/TikTok safe zone: essential top copy begins below `y=320` on the 1080×1920 master, while the presenter card retains breathing room above the bottom platform controls.
 
@@ -29,23 +47,32 @@ The agent inventories files already supplied before requesting more material. If
 Using [Vercel's Skills CLI](https://github.com/vercel-labs/skills), which supports Codex, Claude Code, Cursor, and other compatible agents:
 
 ```bash
-npx skills add misbahsy/tiktok-ig-shorts            # choose agent(s) interactively
-npx skills add misbahsy/tiktok-ig-shorts -a codex   # install directly for Codex
+npx skills add misbahsy/tiktok-ig-shorts             # choose skills and agents interactively
+npx skills add misbahsy/tiktok-ig-shorts -a codex    # install the collection for Codex
 ```
 
-In Codex, invoke it with `$social-talking-head-video` (or use `/skills` to browse), or simply ask the agent to turn your talking-head footage into a polished vertical social edit.
+Install one skill explicitly when preferred:
+
+```bash
+npx skills add misbahsy/tiktok-ig-shorts -s social-talking-head-video -a codex
+npx skills add misbahsy/tiktok-ig-shorts -s popout-talking-head-video -a codex
+npx skills add misbahsy/tiktok-ig-shorts -s kinetic-caption-video -a codex
+npx skills add misbahsy/tiktok-ig-shorts -s anthropic-talking-head-style -a codex
+```
+
+In Codex, invoke a skill with `$social-talking-head-video`, `$popout-talking-head-video`, `$kinetic-caption-video`, or `$anthropic-talking-head-style` (or use `/skills` to browse). Harnesses that expose installed skills as slash commands can use the corresponding `/skill-name` command.
 
 ### Manually (drop-in skill)
 
 Clone the repository, then copy the complete folder so its relative `assets/`, `references/`, and `scripts/` paths remain intact:
 
 ```bash
-git clone https://github.com/misbahsy/tiktok-ig-shorts.git social-talking-head-video
-cp -R social-talking-head-video "${CODEX_HOME:-$HOME/.codex}/skills/"  # Codex
-cp -R social-talking-head-video "$HOME/.agents/skills/"               # compatible agents
+git clone https://github.com/misbahsy/tiktok-ig-shorts.git
+cp -R tiktok-ig-shorts/skills/* "${CODEX_HOME:-$HOME/.codex}/skills/"  # Codex
+cp -R tiktok-ig-shorts/skills/* "$HOME/.agents/skills/"               # compatible agents
 ```
 
-For another coding harness, configure its skill or instruction loader to read this repository's `SKILL.md` and preserve the relative `assets/`, `references/`, and `scripts/` paths.
+For another coding harness, configure its skill loader to discover the folders under `skills/` and preserve each skill's relative `assets/`, `references/`, and `scripts/` paths.
 
 ## Use
 
@@ -56,6 +83,8 @@ Use $social-talking-head-video to turn my talking-head clip into a polished vert
 ```
 
 The agent will run the intake before production. You can provide a folder instead of listing every asset manually; the included media inventory script probes common video, audio, image, and font formats.
+
+If you provide a webpage URL—or research identifies a useful page—the base skill prefers a smooth browser-recorded scroll over a static screenshot. It uses Rollberry-style eased capture with optional hero holds, section stops, mobile/desktop viewports, and removal of irrelevant cookie or chat overlays.
 
 ## Requirements
 
@@ -72,17 +101,10 @@ npx hyperframes skills update talking-head-recut
 
 ## Repository contents
 
-- `SKILL.md` — complete agent workflow and guardrails
-- `references/intake.md` — three-part intake gate
-- `references/editorial-system.md` — A-roll/B-roll and caption design system
-- `references/presenter-treatments.md` — standard and layered pop-out PiP compositing
-- `references/production-and-qa.md` — approval, render, and delivery checks
-- `references/sound-design.md` — calibrated under-dialogue SFX placement and verification
-- `assets/brief-template.md` — production brief template
-- `assets/caption-styles.css` — adaptable semantic caption treatments
-- `assets/social-safe-zone-overlay.svg` — conservative Reels/TikTok UI exclusion guide
-- `scripts/inventory_media.py` — asset inventory and metadata probing
-- `scripts/group_transcript.py` — word-timestamp to caption-group helper
-- `examples/ai-shorts-editing-assistant-final.mp4` — finished 9:16 reference edit
+- `skills/social-talking-head-video/` — complete edit workflow, intake, scrolling-page B-roll, safe zones, SFX, QA, and helper scripts
+- `skills/popout-talking-head-video/` — transparent-subject compositing and depth-layer contract
+- `skills/kinetic-caption-video/` — roaming semantic captions and transcript grouping helper
+- `skills/anthropic-talking-head-style/` — reusable warm editorial visual tokens and styling guidance
+- `skills/*/assets/example/` — corresponding verified reference MP4 and poster for each skill
 
 The skill intentionally discourages generated-looking shortcuts such as decorative status pills, presenter labels, gratuitous glassmorphism, and arbitrary caption styling.

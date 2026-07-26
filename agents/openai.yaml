@@ -1,4 +1,0 @@
-interface:
-  display_name: "Social Talking-Head Video"
-  short_description: "Polished social edits with dynamic captions"
-  default_prompt: "Use $social-talking-head-video to turn my talking-head footage into a polished vertical social edit with word-timed dynamic captions."

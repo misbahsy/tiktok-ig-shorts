@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pop-out Talking-Head Video"
+  short_description: "Layer presenters outside the PiP frame"
+  default_prompt: "Use $popout-talking-head-video to make my presenter break out of the picture-in-picture frame with optional text behind them."
