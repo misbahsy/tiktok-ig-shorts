@@ -7,6 +7,8 @@ description: Apply an Anthropic-inspired warm editorial art direction to an exis
 
 Apply a visual system while preserving the edit's factual content, timing, captions, and media choreography. Use with `$social-talking-head-video`, `$popout-talking-head-video`, or an existing HyperFrames composition.
 
+Inspect [assets/example/anthropic-editorial.mp4](assets/example/anthropic-editorial.mp4) when a concrete reference for the complete warm editorial treatment is useful.
+
 ## Direction
 
 Read [references/style-system.md](references/style-system.md). Use principles and tokens, not copied proprietary layouts or unsupported Anthropic branding.

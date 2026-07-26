@@ -17,9 +17,16 @@ The skills are composable. For example, invoke the base editor with the pop-out 
 
 ## Example
 
-[![Watch the finished vertical social edit](examples/ai-shorts-editing-assistant-poster.jpg)](examples/ai-shorts-editing-assistant-final.mp4)
+Each installable skill includes its own verified 1080×1920 MP4 reference:
 
-[Watch or download the MP4](examples/ai-shorts-editing-assistant-final.mp4). This example demonstrates a typed chat hook, product screen recording, animated asset cards, dynamic captions, borderless presenter PiP, a complete 9:16 edit shown inside a phone frame, platform-safe spacing, and motion-synced SFX.
+| Format | Preview | MP4 |
+| --- | --- | --- |
+| Standard talking-head | [![Standard talking-head example](skills/social-talking-head-video/assets/example/poster.png)](skills/social-talking-head-video/assets/example/standard-talking-head.mp4) | [Watch or download](skills/social-talking-head-video/assets/example/standard-talking-head.mp4) |
+| Pop-out presenter | [![Pop-out presenter example](skills/popout-talking-head-video/assets/example/poster.png)](skills/popout-talking-head-video/assets/example/popout-presenter.mp4) | [Watch or download](skills/popout-talking-head-video/assets/example/popout-presenter.mp4) |
+| Kinetic/depth captions | [![Kinetic captions example](skills/kinetic-caption-video/assets/example/poster.png)](skills/kinetic-caption-video/assets/example/kinetic-depth-captions.mp4) | [Watch or download](skills/kinetic-caption-video/assets/example/kinetic-depth-captions.mp4) |
+| Anthropic editorial style | [![Anthropic editorial example](skills/anthropic-talking-head-style/assets/example/poster.png)](skills/anthropic-talking-head-style/assets/example/anthropic-editorial.mp4) | [Watch or download](skills/anthropic-talking-head-style/assets/example/anthropic-editorial.mp4) |
+
+The first three use the same source edit so the presenter and caption treatments can be compared directly. The Anthropic example uses the longer Scroll World video to demonstrate the complete warm editorial system.
 
 The composition uses a conservative shared Instagram/TikTok safe zone: essential top copy begins below `y=320` on the 1080×1920 master, while the presenter card retains breathing room above the bottom platform controls.
 
@@ -98,6 +105,6 @@ npx hyperframes skills update talking-head-recut
 - `skills/popout-talking-head-video/` — transparent-subject compositing and depth-layer contract
 - `skills/kinetic-caption-video/` — roaming semantic captions and transcript grouping helper
 - `skills/anthropic-talking-head-style/` — reusable warm editorial visual tokens and styling guidance
-- `examples/ai-shorts-editing-assistant-final.mp4` — finished 9:16 reference edit
+- `skills/*/assets/example/` — corresponding verified reference MP4 and poster for each skill
 
 The skill intentionally discourages generated-looking shortcuts such as decorative status pills, presenter labels, gratuitous glassmorphism, and arbitrary caption styling.

@@ -7,6 +7,8 @@ description: Add continuous word-timed kinetic captions to talking-head and soci
 
 Create captions that participate in the edit rather than behaving like fixed subtitles. Use alone on an existing HyperFrames video or alongside `$social-talking-head-video` and `$popout-talking-head-video`.
 
+Inspect [assets/example/kinetic-depth-captions.mp4](assets/example/kinetic-depth-captions.mp4) when a concrete reference for roaming and behind-presenter caption zones is useful.
+
 ## Source
 
 Require corrected word-level timestamps. Generate and group them when needed:

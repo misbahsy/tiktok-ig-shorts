@@ -7,6 +7,8 @@ description: Create or revise a vertical talking-head social edit so the present
 
 Build a real layered presenter composite, not a shifted duplicate. Use this skill alone for an existing composition or alongside `$social-talking-head-video` for a complete edit.
 
+Inspect [assets/example/popout-presenter.mp4](assets/example/popout-presenter.mp4) when a concrete reference for the layered edge breakout is useful.
+
 ## Intake
 
 Confirm:

@@ -7,6 +7,8 @@ description: Package existing talking-head, interview, tutorial, or founder foot
 
 Create a professional vertical social edit from existing speech-led footage. Preserve the source narration while designing an intentional rhythm between presenter, B-roll, product evidence, motion graphics, and semantic captions.
 
+When a visual reference is useful, inspect [assets/example/standard-talking-head.mp4](assets/example/standard-talking-head.mp4). Treat it as a quality and structure example, not a template to copy blindly.
+
 ## 1. Run the intake gate before building
 
 Read [references/intake.md](references/intake.md) and collect its three information groups in one concise round. Do not scaffold, transcribe, source media, or design frames until the intake is answered or the user explicitly delegates decisions.
