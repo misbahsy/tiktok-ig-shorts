@@ -107,6 +107,10 @@ Copy or adapt [assets/caption-styles.css](assets/caption-styles.css). The five s
 
 ### B-roll and screen recordings
 
+- When a user supplies a webpage URL, or research identifies a page worth showing, prefer a smooth scrolling webpage capture over a static full-page screenshot. Read [references/scrolling-webpage-broll.md](references/scrolling-webpage-broll.md).
+- Capture the real page in a browser at a deterministic frame rate. Begin with a short hero hold, scroll with an eased curve, and optionally pause at the section that proves the spoken claim.
+- Hide cookie banners, chat launchers, sticky signup bars, and other unrelated overlays before capture. Do not hide meaningful product UI or disclosure text.
+- Use a viewport that fits the intended proof: desktop for layout and product breadth; mobile when responsive behavior is the subject. Record both only when the edit benefits from the contrast.
 - Normalize high-frame-rate recordings to the composition fps and use dense keyframes for seek-safe rendering.
 - Keep all `<video>` and `<audio>` elements as direct children of the HyperFrames composition root.
 - Use `object-fit: cover` for portrait or crop-safe material; use a deliberate dark or branded stage for landscape recordings that must remain uncropped.

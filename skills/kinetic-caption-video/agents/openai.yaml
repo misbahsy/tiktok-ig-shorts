@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kinetic Caption Video"
+  short_description: "Roaming word-timed captions with depth"
+  default_prompt: "Use $kinetic-caption-video to add roaming, resizing, word-timed captions to my social video."

@@ -27,6 +27,8 @@ Ask whether any of these exist, and request paths, folders, or URLs:
 
 Inventory supplied folders before requesting replacements. Explain the proposed use of useful material, for example: “The skill screen recording can take over full-screen when you say ‘install’; the logo can appear only in the hook and close.”
 
+When a live URL is supplied, ask only if necessary whether the target is a specific section, interaction, desktop layout, or mobile layout. Otherwise default to a short eased scrolling capture with a hero hold and one proof-section pause. Prefer this moving capture to a static screenshot unless a single fixed state must remain readable.
+
 ## 3. Visual direction and constraints
 
 Ask for:

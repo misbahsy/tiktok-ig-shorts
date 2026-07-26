@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anthropic Talking-Head Style"
+  short_description: "Warm editorial styling for social video"
+  default_prompt: "Use $anthropic-talking-head-style to restyle my talking-head social edit with a warm Anthropic-inspired editorial system."
